@@ -5,6 +5,8 @@ class ClothingPiece < ApplicationRecord
 
   # Validations
 
+  validates :clothing_type_id, :inclusion => { :in => [ "top", "bottom", "dress", "romper/jumpsuit", "sweater", "jacket", "accessories" ]  }
+
   validates :name, :uniqueness => true
 
   validates :name, :presence => true
