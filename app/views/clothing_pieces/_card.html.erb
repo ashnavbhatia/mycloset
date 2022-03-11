@@ -6,72 +6,52 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>User</dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @clothing_piece.user.present? %>
           <%= link_to clothing_piece.user, clothing_piece.user %>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>Photo</dt>
-      <!-- Display photo start -->
       <dd>
         <%= cl_image_tag @clothing_piece.photo, class: "img-fluid" %>
       </dd>
-      <!-- Display photo end -->
 
       <dt>Size</dt>
-      <!-- Display size start -->
       <dd><%= clothing_piece.size %></dd>
-      <!-- Display size end -->
 
       <dt>Brand name</dt>
-      <!-- Display brand_name_id start -->
       <dd>
         <% if @clothing_piece.brand_name.present? %>
           <%= link_to clothing_piece.brand_name, clothing_piece.brand_name %>
         <% end %>
       </dd>
-      <!-- Display brand_name_id end -->
 
       <dt>Clothing type</dt>
-      <!-- Display clothing_type_id start -->
       <dd>
         <% if @clothing_piece.clothing_type.present? %>
           <%= link_to clothing_piece.clothing_type, clothing_piece.clothing_type %>
         <% end %>
       </dd>
-      <!-- Display clothing_type_id end -->
 
       <dt>Last used date</dt>
-      <!-- Display last_used_date start -->
       <dd><%= clothing_piece.last_used_date %></dd>
-      <!-- Display last_used_date end -->
 
       <dt>Borrowed</dt>
-      <!-- Display borrowed start -->
       <dd><%= clothing_piece.borrowed %></dd>
-      <!-- Display borrowed end -->
 
       <dt>Borrower</dt>
-      <!-- Display borrower_id start -->
       <dd>
         <% if @clothing_piece.borrower.present? %>
           <%= link_to clothing_piece.borrower, clothing_piece.borrower %>
         <% end %>
       </dd>
-      <!-- Display borrower_id end -->
 
       <dt>Name</dt>
-      <!-- Display name start -->
       <dd><%= clothing_piece.name %></dd>
-      <!-- Display name end -->
 
       <dt>Description</dt>
-      <!-- Display description start -->
       <dd><%= clothing_piece.description %></dd>
-      <!-- Display description end -->
 
     </dl>
 
@@ -80,7 +60,6 @@
         <%= link_to_show_or_back clothing_piece, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link clothing_piece start -->
       <div class="col">
         <% if current_user == @clothing_piece.user %>
           <%= link_to edit_clothing_piece_url(clothing_piece), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -88,9 +67,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link clothing_piece end -->
 
-      <!-- Delete link clothing_piece start -->
       <div class="col">
         <% if current_user == @clothing_piece.user %>
           <%= link_to clothing_piece, method: :delete, data: { confirm: "Do you really want to delete this clothing_piece?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -98,7 +75,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link clothing_piece end -->
     </div>
   </div>
 

@@ -1,96 +1,54 @@
-<!-- Form clothing_piece start -->
 <%= form_with(model: @clothing_piece, local: true) do |f| %>
-<!-- Form clothing_piece end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <%= f.hidden_field :user_id, value: current_user.id %>
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for photo start -->
   <div class="form-group">
     <%= f.label :photo %>
 
-    <!-- Input for photo start -->
     <%= f.file_field :photo, class: "form-control" %>
-    <!-- Input for photo end -->
   </div>
-  <!-- Label and input for photo end -->
 
-  <!-- Label and input for size start -->
   <div class="form-group">
     <%= f.label :size %>
 
-    <!-- Input for size start -->
     <%= f.text_field :size, class: "form-control" %>
-    <!-- Input for size end -->
   </div>
-  <!-- Label and input for size end -->
 
-  <!-- Label and input for brand_name_id start -->
   <div class="form-group">
     <%= f.label :brand_name_id %>
 
-    <!-- Input for brand_name_id start -->
     <%= f.collection_select :brand_name_id, BrandName.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for brand_name_id end -->
   </div>
-  <!-- Label and input for brand_name_id end -->
 
-  <!-- Label and input for clothing_type_id start -->
-  <!-- Input for clothing_type_id start -->
   <%= f.hidden_field :clothing_type_id, value: @clothing_type_id.id %>
-  <!-- Input for clothing_type_id end -->
-  <!-- Label and input for clothing_type_id end -->
 
-  <!-- Label and input for last_used_date start -->
   <div class="form-group">
     <%= f.label :last_used_date %>
 
-    <!-- Input for last_used_date start -->
     <%= f.date_select :last_used_date, class: "form-control" %>
-    <!-- Input for last_used_date end -->
   </div>
-  <!-- Label and input for last_used_date end -->
 
-  <!-- Label and input for borrowed start -->
   <div class="form-check">
-    <!-- Input for borrowed start -->
     <%= f.check_box :borrowed, class: "form-check-input" %>
-    <!-- Input for borrowed end -->
     <%= f.label :borrowed, class: "form-check-label" %>
   </div>
-  <!-- Label and input for borrowed end -->
 
-  <!-- Label and input for borrower_id start -->
   <div class="form-group">
     <%= f.label :borrower_id %>
 
-    <!-- Input for borrower_id start -->
     <%= f.collection_select :borrower_id, Borrower.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for borrower_id end -->
   </div>
-  <!-- Label and input for borrower_id end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <%= f.label :name %>
 
-    <!-- Input for name start -->
     <%= f.text_field :name, class: "form-control" %>
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for description start -->
   <div class="form-group">
     <%= f.label :description %>
-    <!-- Input for description start -->
     <%= f.text_area :description, rows: "3", class: "form-control" %>
-    <!-- Input for description end -->
   </div>
-  <!-- Label and input for description end -->
 
   <%= f.submit "Create clothing piece", class: "btn btn-block btn-outline-secondary" %>
 <% end %>
