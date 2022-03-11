@@ -1,0 +1,5 @@
+<% was_validated = clothing_type_id.errors.any? %>
+
+<%= form_with(model: clothing_type_id, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>
