@@ -8,6 +8,7 @@ class BrandNamesController < ApplicationController
 
   # GET /brand_names/1
   def show
+    @clothing_piece = ClothingPiece.new
   end
 
   # GET /brand_names/new

@@ -8,6 +8,7 @@ class ClothingTypeIdsController < ApplicationController
 
   # GET /clothing_type_ids/1
   def show
+    @clothing_piece = ClothingPiece.new
   end
 
   # GET /clothing_type_ids/new
