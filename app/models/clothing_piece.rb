@@ -1,6 +1,9 @@
 class ClothingPiece < ApplicationRecord
   # Direct associations
 
+  belongs_to :clothing_type,
+             :class_name => "ClothingTypeId"
+
   belongs_to :brand_name
 
   belongs_to :user
