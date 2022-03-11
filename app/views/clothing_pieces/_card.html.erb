@@ -7,7 +7,11 @@
     <dl class="mb-1">
       <dt>User</dt>
       <!-- Display user_id start -->
-      <dd><%= clothing_piece.user_id %></dd>
+      <dd>
+        <% if @clothing_piece.user.present? %>
+          <%= link_to clothing_piece.user, clothing_piece.user %>
+        <% end %>
+      </dd>
       <!-- Display user_id end -->
 
       <dt>Photo</dt>
@@ -24,12 +28,20 @@
 
       <dt>Brand name</dt>
       <!-- Display brand_name_id start -->
-      <dd><%= clothing_piece.brand_name_id %></dd>
+      <dd>
+        <% if @clothing_piece.brand_name.present? %>
+          <%= link_to clothing_piece.brand_name, clothing_piece.brand_name %>
+        <% end %>
+      </dd>
       <!-- Display brand_name_id end -->
 
       <dt>Clothing type</dt>
       <!-- Display clothing_type_id start -->
-      <dd><%= clothing_piece.clothing_type_id %></dd>
+      <dd>
+        <% if @clothing_piece.clothing_type.present? %>
+          <%= link_to clothing_piece.clothing_type, clothing_piece.clothing_type %>
+        <% end %>
+      </dd>
       <!-- Display clothing_type_id end -->
 
       <dt>Last used date</dt>
@@ -44,7 +56,11 @@
 
       <dt>Borrower</dt>
       <!-- Display borrower_id start -->
-      <dd><%= clothing_piece.borrower_id %></dd>
+      <dd>
+        <% if @clothing_piece.borrower.present? %>
+          <%= link_to clothing_piece.borrower, clothing_piece.borrower %>
+        <% end %>
+      </dd>
       <!-- Display borrower_id end -->
 
       <dt>Name</dt>
