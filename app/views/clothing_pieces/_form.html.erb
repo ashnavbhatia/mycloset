@@ -120,7 +120,7 @@
 
     <%= f.label :clothing_type_id %>
     <!-- Input for clothing_type_id start -->
-    <%= f.number_field :clothing_type_id, class: clothing_type_class, placeholder: "Enter clothing type" %>
+    <%= f.collection_select :clothing_type_id, ClothingTypeId.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for clothing_type_id end -->
     <% if clothing_type_was_invalid %>
       <% clothing_piece.errors.full_messages_for(:clothing_type).each do |message| %>

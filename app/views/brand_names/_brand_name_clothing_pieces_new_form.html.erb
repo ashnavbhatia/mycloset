@@ -43,7 +43,7 @@
     <%= f.label :clothing_type_id %>
 
     <!-- Input for clothing_type_id start -->
-    <%= f.text_field :clothing_type_id, class: "form-control" %>
+    <%= f.collection_select :clothing_type_id, ClothingTypeId.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for clothing_type_id end -->
   </div>
   <!-- Label and input for clothing_type_id end -->
