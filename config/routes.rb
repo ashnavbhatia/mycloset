@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :borrowers
   resources :clothing_type_ids
   resources :brand_names
   resources :clothing_pieces
