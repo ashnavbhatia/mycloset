@@ -3,7 +3,7 @@ class BrandNamesController < ApplicationController
 
   # GET /brand_names
   def index
-    @brand_names = BrandName.all
+    @brand_names = BrandName.page(params[:page]).per(10)
   end
 
   # GET /brand_names/1
