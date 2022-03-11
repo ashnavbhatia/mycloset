@@ -5,6 +5,9 @@ class ClothingTypeIdResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :clothing_pieces,
+             foreign_key: :clothing_type_id
+
   # Indirect associations
 
 end
