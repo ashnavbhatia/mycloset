@@ -94,7 +94,7 @@
 
     <%= f.label :brand_name_id %>
     <!-- Input for brand_name_id start -->
-    <%= f.number_field :brand_name_id, class: brand_name_class, placeholder: "Enter brand name" %>
+    <%= f.collection_select :brand_name_id, BrandName.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for brand_name_id end -->
     <% if brand_name_was_invalid %>
       <% clothing_piece.errors.full_messages_for(:brand_name).each do |message| %>
