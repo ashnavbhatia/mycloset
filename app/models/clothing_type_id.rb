@@ -2,8 +2,8 @@ class ClothingTypeId < ApplicationRecord
   # Direct associations
 
   has_many   :clothing_pieces,
-             :foreign_key => "clothing_type_id",
-             :dependent => :destroy
+             foreign_key: "clothing_type_id",
+             dependent: :destroy
 
   # Indirect associations
 
@@ -14,5 +14,4 @@ class ClothingTypeId < ApplicationRecord
   def to_s
     created_at
   end
-
 end

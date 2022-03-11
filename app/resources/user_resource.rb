@@ -7,8 +7,7 @@ class UserResource < ApplicationResource
 
   # Direct associations
 
-  has_many   :clothing_pieces
+  has_many :clothing_pieces
 
   # Indirect associations
-
 end

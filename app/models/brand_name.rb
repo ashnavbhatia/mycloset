@@ -2,7 +2,7 @@ class BrandName < ApplicationRecord
   # Direct associations
 
   has_many   :clothing_pieces,
-             :dependent => :destroy
+             dependent: :destroy
 
   # Indirect associations
 
@@ -13,5 +13,4 @@ class BrandName < ApplicationRecord
   def to_s
     created_at
   end
-
 end

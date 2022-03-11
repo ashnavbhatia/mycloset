@@ -9,5 +9,4 @@ class ClothingTypeIdResource < ApplicationResource
              foreign_key: :clothing_type_id
 
   # Indirect associations
-
 end

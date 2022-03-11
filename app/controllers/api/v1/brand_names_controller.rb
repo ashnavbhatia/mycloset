@@ -13,7 +13,7 @@ class Api::V1::BrandNamesController < Api::V1::GraphitiController
     brand_name = BrandNameResource.build(params)
 
     if brand_name.save
-      render jsonapi: brand_name, status: 201
+      render jsonapi: brand_name, status: :created
     else
       render jsonapi_errors: brand_name
     end
@@ -33,7 +33,7 @@ class Api::V1::BrandNamesController < Api::V1::GraphitiController
     brand_name = BrandNameResource.find(params)
 
     if brand_name.destroy
-      render jsonapi: { meta: {} }, status: 200
+      render jsonapi: { meta: {} }, status: :ok
     else
       render jsonapi_errors: brand_name
     end

@@ -1,13 +1,13 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe ClothingTypeIdResource, type: :resource do
-  describe 'creating' do
+  describe "creating" do
     let(:payload) do
       {
         data: {
-          type: 'clothing_type_ids',
-          attributes: { }
-        }
+          type: "clothing_type_ids",
+          attributes: {},
+        },
       }
     end
 
@@ -15,23 +15,24 @@ RSpec.describe ClothingTypeIdResource, type: :resource do
       ClothingTypeIdResource.build(payload)
     end
 
-    it 'works' do
-      expect {
-        expect(instance.save).to eq(true), instance.errors.full_messages.to_sentence
-      }.to change { ClothingTypeId.count }.by(1)
+    it "works" do
+      expect do
+        expect(instance.save).to eq(true),
+                                 instance.errors.full_messages.to_sentence
+      end.to change { ClothingTypeId.count }.by(1)
     end
   end
 
-  describe 'updating' do
+  describe "updating" do
     let!(:clothing_type_id) { create(:clothing_type_id) }
 
     let(:payload) do
       {
         data: {
           id: clothing_type_id.id.to_s,
-          type: 'clothing_type_ids',
-          attributes: { } # Todo!
-        }
+          type: "clothing_type_ids",
+          attributes: {}, # Todo!
+        },
       }
     end
 
@@ -39,25 +40,25 @@ RSpec.describe ClothingTypeIdResource, type: :resource do
       ClothingTypeIdResource.find(payload)
     end
 
-    xit 'works (add some attributes and enable this spec)' do
-      expect {
+    xit "works (add some attributes and enable this spec)" do
+      expect do
         expect(instance.update_attributes).to eq(true)
-      }.to change { clothing_type_id.reload.updated_at }
+      end.to change { clothing_type_id.reload.updated_at }
       # .and change { clothing_type_id.foo }.to('bar') <- example
     end
   end
 
-  describe 'destroying' do
+  describe "destroying" do
     let!(:clothing_type_id) { create(:clothing_type_id) }
 
     let(:instance) do
       ClothingTypeIdResource.find(id: clothing_type_id.id)
     end
 
-    it 'works' do
-      expect {
+    it "works" do
+      expect do
         expect(instance.destroy).to eq(true)
-      }.to change { ClothingTypeId.count }.by(-1)
+      end.to change { ClothingTypeId.count }.by(-1)
     end
   end
 end
