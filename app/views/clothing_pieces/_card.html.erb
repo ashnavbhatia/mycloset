@@ -12,7 +12,9 @@
 
       <dt>Photo</dt>
       <!-- Display photo start -->
-      <dd><%= clothing_piece.photo %></dd>
+      <dd>
+        <%= cl_image_tag @clothing_piece.photo, class: "img-fluid" %>
+      </dd>
       <!-- Display photo end -->
 
       <dt>Size</dt>
