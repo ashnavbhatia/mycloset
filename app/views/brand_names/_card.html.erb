@@ -1,0 +1,36 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Brand Name #<%= brand_name.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+    </dl>
+
+    <div class="row">
+      <div class="col">
+        <%= link_to_show_or_back brand_name, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
+      </div>
+
+      <!-- Edit link brand_name start -->
+      <div class="col">
+        <%= link_to edit_brand_name_url(brand_name), class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+      </div>
+      <!-- Edit link brand_name end -->
+
+      <!-- Delete link brand_name start -->
+      <div class="col">
+        <%= link_to brand_name, method: :delete, data: { confirm: "Do you really want to delete this brand_name?" }, class: "btn btn-block btn-outline-secondary" do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+      </div>
+      <!-- Delete link brand_name end -->
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(brand_name.updated_at) %> ago
+  </div>
+</div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :brand_names
   resources :clothing_pieces
   devise_for :users
   resources :users
