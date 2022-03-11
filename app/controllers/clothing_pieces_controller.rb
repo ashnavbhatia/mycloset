@@ -7,7 +7,7 @@ class ClothingPiecesController < ApplicationController
   def index
     @q = ClothingPiece.ransack(params[:q])
     @clothing_pieces = @q.result(distinct: true).includes(:user,
-                                                          :brand_name, :clothing_type, :borrower).page(params[:page]).per(10)
+                                                          :borrower).page(params[:page]).per(10)
   end
 
   def show; end
