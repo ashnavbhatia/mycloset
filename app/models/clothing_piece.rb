@@ -5,6 +5,8 @@ class ClothingPiece < ApplicationRecord
 
   # Validations
 
+  validates :name, :uniqueness => true
+
   validates :name, :presence => true
 
   validates :photo, :presence => true
