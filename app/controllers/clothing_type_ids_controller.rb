@@ -3,7 +3,8 @@ class ClothingTypeIdsController < ApplicationController
 
   # GET /clothing_type_ids
   def index
-    @clothing_type_ids = ClothingTypeId.page(params[:page]).per(10)
+    @q = ClothingTypeId.ransack(params[:q])
+    @clothing_type_ids = @q.result(:distinct => true).includes(:clothing_pieces).page(params[:page]).per(10)
   end
 
   # GET /clothing_type_ids/1

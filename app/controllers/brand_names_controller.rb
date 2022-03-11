@@ -3,7 +3,8 @@ class BrandNamesController < ApplicationController
 
   # GET /brand_names
   def index
-    @brand_names = BrandName.page(params[:page]).per(10)
+    @q = BrandName.ransack(params[:q])
+    @brand_names = @q.result(:distinct => true).includes(:clothing_pieces).page(params[:page]).per(10)
   end
 
   # GET /brand_names/1
