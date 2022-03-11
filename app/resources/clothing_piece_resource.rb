@@ -17,11 +17,6 @@ class ClothingPieceResource < ApplicationResource
 
   belongs_to :borrower
 
-  belongs_to :clothing_type,
-             resource: ClothingTypeIdResource
-
-  belongs_to :brand_name
-
   belongs_to :user
 
   # Indirect associations

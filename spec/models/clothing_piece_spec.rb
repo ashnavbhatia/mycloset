@@ -4,10 +4,6 @@ RSpec.describe ClothingPiece, type: :model do
   describe "Direct Associations" do
     it { should belong_to(:borrower) }
 
-    it { should belong_to(:clothing_type) }
-
-    it { should belong_to(:brand_name) }
-
     it { should belong_to(:user) }
   end
 

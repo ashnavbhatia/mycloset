@@ -4,10 +4,6 @@ Rails.application.routes.draw do
     scope module: "api/v1", as: "api" do
       resources :borrowers
 
-      resources :clothing_type_ids
-
-      resources :brand_names
-
       resources :clothing_pieces
 
       resources :users
@@ -19,8 +15,6 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: "clothing_pieces#index"
   resources :borrowers
-  resources :clothing_type_ids
-  resources :brand_names
   resources :clothing_pieces
   devise_for :users
   resources :users
