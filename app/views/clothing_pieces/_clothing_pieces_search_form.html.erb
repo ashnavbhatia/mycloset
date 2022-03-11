@@ -67,6 +67,30 @@
   </script>
 
   <div class="form-group">
+    <%= f.label :clothing_type_id, "Clothing type" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :clothing_type_id_gteq, :class => "form-control", :placeholder => "Clothing type greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :clothing_type_id_lteq, :class => "form-control", :placeholder => "Clothing type less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :brand_name_id, "Brand name" %>
+    <div class="row">
+      <div class='col-md-6 mb-1'>
+        <%= f.text_field :brand_name_id_gteq, :class => "form-control", :placeholder => "Brand name greater than or equal to" %>
+      </div>
+      <div class='col-md-6'>
+        <%= f.text_field :brand_name_id_lteq, :class => "form-control", :placeholder => "Brand name less than or equal to" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
     <%= f.label :size_cont, "Size contains" %>
     <%= f.text_field :size_cont, :class => "form-control", :placeholder => "Size contains" %>
   </div>
@@ -116,86 +140,6 @@
     <%= f.label :user_email_cont, "User email contains" %>
     <%= f.text_field :user_email_cont, :class => "form-control", :placeholder => "User email contains" %>
   </div>
-
-  <div class="form-group">
-    <%= f.label :created_at, "BrandName Created at" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='brand_namegteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :brand_name_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "BrandName Created at greater than or equal to", :data => {:target => '#brand_namegteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#brand_namegteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-6'>
-        <div class='input-group date' id='brand_namelteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :brand_name_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "BrandName Created at less than or equal to", :data => {:target => '#brand_namelteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#brand_namelteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-      $(function () {
-          $('#brand_namegteqcreated_atPicker').datetimepicker({
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#brand_namelteqcreated_atPicker').datetimepicker({
-              useCurrent: false,
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#brand_namegteqcreated_atPicker').on("dp.change", function (e) {
-              $('#brand_namelteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
-          });
-          $('#brand_namelteqcreated_atPicker').on("dp.change", function (e) {
-              $('#brand_namegteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
-
-  <div class="form-group">
-    <%= f.label :created_at, "ClothingTypeId Created at" %>
-    <div class="row">
-      <div class='col-md-6 mb-1'>
-        <div class='input-group date' id='clothing_typegteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :clothing_type_created_at_gteq, :class => "form-control datetimepicker-input", :placeholder => "ClothingTypeId Created at greater than or equal to", :data => {:target => '#clothing_typegteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#clothing_typegteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-
-      <div class='col-md-6'>
-        <div class='input-group date' id='clothing_typelteqcreated_atPicker' data-target-input="nearest">
-          <%= f.text_field :clothing_type_created_at_lteq, :class => "form-control datetimepicker-input", :placeholder => "ClothingTypeId Created at less than or equal to", :data => {:target => '#clothing_typelteqcreated_atPicker'} %>
-          <div class="input-group-append" data-target='#clothing_typelteqcreated_atPicker' data-toggle="datetimepicker">
-            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <script type="text/javascript">
-      $(function () {
-          $('#clothing_typegteqcreated_atPicker').datetimepicker({
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#clothing_typelteqcreated_atPicker').datetimepicker({
-              useCurrent: false,
-              format: 'YYYY-MM-DD hh:mm:SS'
-          });
-          $('#clothing_typegteqcreated_atPicker').on("dp.change", function (e) {
-              $('#clothing_typelteqcreated_atPicker').data("DateTimePicker").minDate(e.date);
-          });
-          $('#clothing_typelteqcreated_atPicker').on("dp.change", function (e) {
-              $('#clothing_typegteqcreated_atPicker').data("DateTimePicker").maxDate(e.date);
-          });
-      });
-  </script>
 
   <div class="form-group">
     <%= f.label :borrower_name_cont, "Borrower name contains" %>

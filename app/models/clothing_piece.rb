@@ -5,11 +5,6 @@ class ClothingPiece < ApplicationRecord
 
   belongs_to :borrower
 
-  belongs_to :clothing_type,
-             class_name: "ClothingTypeId"
-
-  belongs_to :brand_name
-
   belongs_to :user
 
   # Indirect associations

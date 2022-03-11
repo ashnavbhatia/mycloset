@@ -21,18 +21,10 @@
       <dd><%= clothing_piece.size %></dd>
 
       <dt>Brand name</dt>
-      <dd>
-        <% if @clothing_piece.brand_name.present? %>
-          <%= link_to clothing_piece.brand_name, clothing_piece.brand_name %>
-        <% end %>
-      </dd>
+      <dd><%= clothing_piece.brand_name_id %></dd>
 
       <dt>Clothing type</dt>
-      <dd>
-        <% if @clothing_piece.clothing_type.present? %>
-          <%= link_to clothing_piece.clothing_type, clothing_piece.clothing_type %>
-        <% end %>
-      </dd>
+      <dd><%= clothing_piece.clothing_type_id %></dd>
 
       <dt>Last used date</dt>
       <dd><%= clothing_piece.last_used_date %></dd>
